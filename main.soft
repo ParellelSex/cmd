@@ -33,6 +33,15 @@ elseif ms == 'restart' then
 elseif ms == 'clear' then
     rconsoleclear()
     text()
-elseif ms == 'hello' then
-   rconsoleprint('hi\n')
-   text()
+elseif ms == 'fix' then
+    writefile('Main.soft',game:HttpGet('https://raw.githubusercontent.com/ParellelSex/cmd/main/main.soft',true))
+    rconsoleprint('Rebooting... Progress!\n')
+    wait(math.random(1,2))
+    rconsoleclear()
+    wait(2.5)
+    rconsoleprint('Rebooting... Done!\n')
+    rconsoleprint('Booting... Done!\n')
+    wait(1)
+    local main = readfile('Main.soft')
+    rconsoleclear()
+    text()

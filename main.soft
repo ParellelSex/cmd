@@ -9,7 +9,7 @@ local function getMDYT()
     return string.format('%s %s, %s | %s',Months[tonumber(os.date('%m'))],tonumber(os.date('%d')),tostring(os.date('%Y')),tostring(os.date('%X')))
 end
 local ms = rconsoleinput()
-if ms:sub(1,5) == 'load ' then
+if ms:sub(1,5):lower() == 'load ' then
     rconsoleprint('Reading... Done!\n')
     wait(math.random(0.1,0.5))
     rconsoleprint('Loading... Done!\n')
@@ -35,7 +35,7 @@ if ms:sub(1,5) == 'load ' then
     rconsoleprint(getMDYT())
     rconsoleprint('\n')
     text()
-elseif ms == 'restart' then
+elseif ms:lower() == 'restart' then
     rconsoleprint('Rebooting... Progress!\n')
     wait(math.random(1,2))
     rconsoleclear()
@@ -115,7 +115,7 @@ pcall(function()
     dumpUser(ms:sub(6))
     rconsoleprint('\n')
     text()
-elseif ms == 'clear' then
+elseif ms:lower() == 'clear' then
     rconsoleclear()
     rconsoleprint('Resolution: '..string.format('%sx%s',tostring(CCamera.ViewportSize.X),tostring(CCamera.ViewportSize.Y)))
     rconsoleprint('\n')
@@ -124,7 +124,7 @@ elseif ms == 'clear' then
     rconsoleprint(getMDYT())
     rconsoleprint('\n')
     text()
-elseif ms == 'latest' then
+elseif ms:lower() == 'latest' then
     writefile('Main.soft',game:HttpGet('https://raw.githubusercontent.com/ParellelSex/cmd/main/main.soft',true))
     rconsoleprint('Rebooting... Progress!\n')
     wait(math.random(1,2))

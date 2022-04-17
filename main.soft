@@ -1,3 +1,13 @@
+local CCamera = game:GetService('Workspace').CurrentCamera
+local Months = {
+[1] = 'January',[2] = 'February',[3] = 'March',
+[4] = 'April',[5] = 'May',[6] = 'June',
+[7] = 'July',[8] = 'August',[9] = 'September',
+[10] = 'October',[11] = 'November',[12] = 'December'
+}
+local function getMDYT()
+    return string.format('%s %s, %s | %s',Months[tonumber(os.date('%m'))],tonumber(os.date('%d')),tostring(os.date('%Y')),tostring(os.date('%X')))
+end
 local ms = rconsoleinput()
 if ms:sub(1,5) == 'load ' then
     rconsoleprint('Reading... Done!\n')
@@ -32,6 +42,9 @@ elseif ms == 'restart' then
     text()
 elseif ms == 'clear' then
     rconsoleclear()
+    rconsoleprint('Resolution: '..string.format('%sx%s',tostring(CCamera.ViewportSize.X),tostring(CCamera.ViewportSize.Y)))
+    rconsoleprint('Instance time: '..getgenv().ExecutionTime)
+    rconsoleprint(getMDYT())
     text()
 elseif ms == 'latest' then
     writefile('Main.soft',game:HttpGet('https://raw.githubusercontent.com/ParellelSex/cmd/main/main.soft',true))

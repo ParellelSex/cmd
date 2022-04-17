@@ -108,11 +108,11 @@ pcall(function()
     rconsoleprint('\n')
     rconsoleprint('Mutuals: ')
     for i,v in next, Mutuals do
-        print(v..' ')
+       rconsoleprint(v..' ')
     end
     end)
     end
-    dump(ms:sub(6))
+    dumpUser(ms:sub(6))
     rconsoleprint('\n')
     text()
 elseif ms == 'clear' then

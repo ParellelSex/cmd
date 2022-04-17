@@ -53,12 +53,12 @@ elseif ms == 'restart' then
     rconsoleprint('\n')
     text()
 elseif ms:sub(1,5):lower == 'dump ' then
-pcall(function()
     local HttpService = game:GetService("HttpService")
 local function GetURL(url)
     return game:HttpGet(url)
 end
 function dumpUser(name)
+pcall(function()
     local dumpplr = game:GetService('Players')[name]
     local ID = dumpplr.UserId
     local info = HttpService:JSONDecode(GetURL(

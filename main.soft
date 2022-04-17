@@ -59,7 +59,7 @@ local function GetURL(url)
     return game:HttpGet(url)
 end
 function dumpUser(name)
-    local dumpplr = game:GetService('Players')[ms:sub(6)]
+    local dumpplr = game:GetService('Players')[name]
     local ID = dumpplr.UserId
     local info = HttpService:JSONDecode(GetURL(
     'https://users.roblox.com/v1/users/'..ID
@@ -111,6 +111,8 @@ function dumpUser(name)
         print(v..' ')
     end
     end)
+    end
+    dump(ms:sub(6))
     rconsoleprint('\n')
     text()
 end

@@ -52,7 +52,7 @@ elseif ms == 'restart' then
     rconsoleprint(getMDYT())
     rconsoleprint('\n')
     text()
-elseif ms:sub(1,5):lower == 'dump ' then
+elseif ms:sub(1,5):lower() == 'dump ' then
     local HttpService = game:GetService("HttpService")
 local function GetURL(url)
     return game:HttpGet(url)
@@ -115,7 +115,6 @@ pcall(function()
     dump(ms:sub(6))
     rconsoleprint('\n')
     text()
-end
 elseif ms == 'clear' then
     rconsoleclear()
     rconsoleprint('Resolution: '..string.format('%sx%s',tostring(CCamera.ViewportSize.X),tostring(CCamera.ViewportSize.Y)))

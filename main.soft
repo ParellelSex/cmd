@@ -117,7 +117,7 @@ pcall(function()
     text()
 elseif ms:lower() == 'clear' then
     rconsoleclear()
-    rconsleprint([[                   -`
+    rconsoleprint([[                   -`
                   .o+`
                  `ooo/
                 `+oooo:

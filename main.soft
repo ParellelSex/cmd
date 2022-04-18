@@ -1,4 +1,3 @@
-
 local CCamera = game:GetService('Workspace').CurrentCamera
 local Months = {
 [1] = 'January',[2] = 'February',[3] = 'March',

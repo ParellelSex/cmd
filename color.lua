@@ -1,1 +1,1 @@
-@@DARK_GRAY@@
+DARK_GRAY
